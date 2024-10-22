@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Gallery</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #FFDEE9, #B5FFFC);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: #333;
+            overflow-x: hidden; /* Mencegah scroll horizontal */
+        }
+        .container {
+            text-align: center;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            width: 90%;
+            max-width: 1200px;
+            position: relative;
+            overflow: hidden;
+            animation: fadeIn 2s ease-in-out;
+        }
+        h1 {
+            color: #FF6F91;
+            font-size: 3rem;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 1;
+        }
+        h1::after {
+            content: '♥';
+            position: absolute;
+            top: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 100px;
+            color: rgba(255, 111, 145, 0.3);
+            z-index: 0;
+            animation: heartbeat 1.5s infinite;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        .gallery img, .gallery video {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+        }
+        .gallery img:hover, .gallery video:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        footer {
+            margin-top: 30px;
+            font-size: 1.5rem;
+            color: #FF6F91;
+            position: relative;
+            z-index: 1;
+        }
+        /* Animasi Floating Bubbles */
+        .bubble {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.4);
+            bottom: -150px;
+            animation: floatUp 10s infinite;
+        }
+        .bubble:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            left: 20%;
+            animation-duration: 12s;
+        }
+        .bubble:nth-child(2) {
+            width: 60px;
+            height: 60px;
+            left: 70%;
+            animation-duration: 14s;
+        }
+        .bubble:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            left: 40%;
+            animation-duration: 10s;
+        }
+        .bubble:nth-child(4) {
+            width: 50px;
+            height: 50px;
+            left: 80%;
+            animation-duration: 16s;
+        }
+        .bubble:nth-child(5) {
+            width: 120px;
+            height: 120px;
+            left: 30%;
+            animation-duration: 18s;
+        }
+        /* Animasi */
+        @keyframes floatUp {
+            0% {
+                bottom: -150px;
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                bottom: 100vh;
+                opacity: 0;
+            }
+        }
+        @keyframes heartbeat {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        /* Responsif untuk Mobile */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            .gallery img, .gallery video {
+                height: 200px;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2rem;
+            }
+            .gallery img, .gallery video {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>For My Love</h1>
+        <div class="gallery">
+            <img src="WhatsApp Image 2024-10-22 at 06.44.44.jpeg" alt="Photo 1">
+            <video src="WhatsApp Video 2024-10-22 at 06.44.45 (1).mp4" autoplay loop muted></video>
+            <img src="WhatsApp Image 2024-10-22 at 06.44.44.jpeg" alt="Photo 2">
+            <video src="WhatsApp Video 2024-10-22 at 06.44.45 (1).mp4" autoplay loop muted></video>
+            <img src="WhatsApp Image 2024-10-22 at 06.44.44.jpeg" alt="Photo 3">
+            <video src="WhatsApp Video 2024-10-22 at 06.44.45 (1).mp4" autoplay loop muted></video>
+        </div>
+        <footer>With all my heart ♥</footer>
+    </div>
+
+    <!-- Floating Bubbles -->
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+</body>
+</html>
+
+
+
+
